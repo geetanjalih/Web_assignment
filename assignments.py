@@ -5,7 +5,7 @@ p_info=[]
 
 @post('/member_info/') 
 def add_patient():
-    p_id = request.POST['id']
+    p_id = request.POST['p_id']
     p_name = request.POST['name']
     p_gender = request.POST['gender']
     p_age = request.POST['age']
@@ -17,7 +17,7 @@ def add_patient():
 
 @get('/member_info/<p_id>')
 def show_info(p_id):
-    return template('<b> {{p_dict[p_id]}}',p_dict=p_dict,p_id=pid)
+    return template('<b> {{p_dict[p_id]}}',p_dict=p_dict,p_id=p_id)
 
 
 @delete('/member_info/<p_id>')
@@ -30,7 +30,7 @@ def delete_member(p_id):
 
 @put('/member_info/')
 def add_data():
-    p_id = request.POST['id']
+    p_id = request.POST['p_id']
     p_name = request.POST['name']
     p_gender = request.POST['gender']
     p_age = request.POST['age']
